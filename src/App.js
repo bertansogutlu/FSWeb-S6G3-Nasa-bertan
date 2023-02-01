@@ -8,6 +8,7 @@ function App() {
   useEffect (() => {
     axios.get('https://api.nasa.gov/planetary/apod?api_key=WDVLfQss0FOfcv6WelZtNLXR1qEQv5Hv8INlW7Bh')
   .then(function (response) {
+    console.log(response.data)
     setData({
       copyright: response.data.copyright,
       title: response.data.title,
@@ -24,7 +25,7 @@ function App() {
         NASA uygulamasını yapmak için README.md dosyasıdaki talimatları takip edin
 		İyi eğlenceler! <span role="img" aria-label='go!'>🚀</span>!
       </p>
-      <Header/>
+      <Header title = {title}/>
     </div>
   );
 }
