@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Header from "./Header";
 
 function App() {
   const [data, setData] = useState({})
@@ -23,6 +24,7 @@ function App() {
         NASA uygulamasını yapmak için README.md dosyasıdaki talimatları takip edin
 		İyi eğlenceler! <span role="img" aria-label='go!'>🚀</span>!
       </p>
+      <Header/>
     </div>
   );
 }
