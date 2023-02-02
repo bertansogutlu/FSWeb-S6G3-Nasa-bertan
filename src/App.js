@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
+import Slile from "./Carousel";
 
 function App() {
   const [data, setData] = useState({})
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <Header head="Astronomy Picture of the Day" />
       <Body discover = "https://apod.nasa.gov/apod/archivepix.html" copyright = {copyright} title = {title} date = {date} explanation = {explanation} url = {url}/>
+      <Slile/>
       <Footer foot="https://www.nasa.gov/" />
     </div>
   );
