@@ -1,4 +1,5 @@
 import React from "react";
+import Img from "./img"
 
 const Body = ({discover, date, url, title, copyright, explanation}) => {
     return <div>
@@ -11,7 +12,7 @@ const Body = ({discover, date, url, title, copyright, explanation}) => {
         <p>
         <b>{date}</b>
         </p>
-        <img src = {url} alt = {title}/>
+        <Img url={url} title={title}/>
         <h2>
             {title}
         </h2>
