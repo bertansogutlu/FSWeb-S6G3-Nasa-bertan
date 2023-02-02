@@ -10,13 +10,14 @@ function App() {
   useEffect(() => {
     axios.get('https://api.nasa.gov/planetary/apod?api_key=WDVLfQss0FOfcv6WelZtNLXR1qEQv5Hv8INlW7Bh')
       .then(function (response) {
-        console.log(response.data)
+        const data = response.data
+        console.log(data)
         setData({
-          copyright: response.data.copyright,
-          title: response.data.title,
-          date: response.data.date,
-          explanation: response.data.explanation,
-          url: response.data.url,
+          copyright: data.copyright,
+          title: data.title,
+          date: data.date,
+          explanation: data.explanation,
+          url: data.url,
         });
       })
   }, [])
