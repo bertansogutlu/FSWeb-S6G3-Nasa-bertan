@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 import {
   Carousel,
   CarouselItem,
@@ -7,28 +8,49 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
-const items = [
-  {
-    src: 'https://picsum.photos/id/123/1200/400',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    key: 1,
-  },
-  {
-    src: 'https://picsum.photos/id/456/1200/400',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    key: 2,
-  },
-  {
-    src: 'https://picsum.photos/id/678/1200/400',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    key: 3,
-  },
-];
+
+
+
 
 function SlideShow(args) {
+    const [data, setData] = useState({})
+    const [randomDate, setRandomDate] = useState("")
+    useEffect(() => {
+        axios.get("https://api.nasa.gov/planetary/apod?api_key=WDVLfQss0FOfcv6WelZtNLXR1qEQv5Hv8INlW7Bh&date=2000-06-20")
+          .then(function (response) {
+            const data = response.data
+            console.log(data)
+            setData({
+              copyright: data.copyright,
+              title: data.title,
+              date: data.date,
+              explanation: data.explanation,
+              url: data.url,
+            });
+          })
+      }, [])
+
+      const items = [
+        {
+          src: {},
+          altText: 'Slide 1',
+          caption: 'Slide 1',
+          key: 1,
+        },
+        {
+          src: 'https://picsum.photos/id/456/1200/400',
+          altText: 'Slide 2',
+          caption: 'Slide 2',
+          key: 2,
+        },
+        {
+          src: 'https://picsum.photos/id/678/1200/400',
+          altText: 'Slide 3',
+          caption: 'Slide 3',
+          key: 3,
+        },
+      ];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

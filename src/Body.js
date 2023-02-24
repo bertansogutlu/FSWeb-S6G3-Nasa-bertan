@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "./img"
 
-const Body = ({discover, date, url, title, copyright, explanation}) => {
+const Body = ({discover, date, url, title, copyright, explanation, media_type}) => {
     return <div>
         <div>
         <a href = {discover}><b>Discover the cosmos!</b></a>
@@ -12,7 +12,7 @@ const Body = ({discover, date, url, title, copyright, explanation}) => {
         <p>
         <b>{date}</b>
         </p>
-        <Img url={url} title={title}/>
+        <Img url={url} title={title} media_type={media_type}/>
         <h2>
             {title}
         </h2>

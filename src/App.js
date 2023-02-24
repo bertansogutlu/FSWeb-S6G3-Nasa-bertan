@@ -25,16 +25,16 @@ function App() {
           date: data.date,
           explanation: data.explanation,
           url: data.url,
+          media_type : data.media_type,
         });
       })
   }, [searchDate])
-  const { copyright, date, explanation, title, url } = data;
+  const { copyright, date, explanation, title, url, media_type } = data;
   return (
     <div className="App">
       <Header head="Astronomy Picture of the Day"/>
       <Search searchDate = {searchDate} changeHandler = {changeHandler}/>
-      <Body discover = "https://apod.nasa.gov/apod/archivepix.html" copyright = {copyright} title = {title} date = {date} explanation = {explanation} url = {url}/>
-      <Slide/>
+      <Body discover = "https://apod.nasa.gov/apod/archivepix.html" copyright = {copyright} title = {title} date = {date} explanation = {explanation} url = {url} media_type={media_type}/>
       <Footer foot="https://www.nasa.gov/"/>
     </div>
   );
